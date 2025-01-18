@@ -1,0 +1,15 @@
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    background-color: #036;
+    padding : 0.8rem; 
+    color: white;
+    border-radius: 10px;
+
+}
+.nav-links{
+    display: flex;
+    justify-content: space-evenly;
+    gap: 1.5rem;
+    
+}

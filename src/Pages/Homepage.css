@@ -1,0 +1,32 @@
+.Homepage{
+    width: 40%;
+    margin:0 auto;
+    margin-top: 4rem;
+    padding: 1rem;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 10px;
+    
+}
+h2{
+    text-align: center;
+    margin: 10px;
+}
+#from, #to, #Date{
+    display: flex;
+    
+    width: 55%;
+    margin: 5px;
+    padding: 5px;
+    border-radius: 5px;
+}
+button{
+    display: flex;
+    width: 95%;
+    justify-content: center;
+    align-items: center;
+    margin: 15px;
+    padding: 10px;
+    background-color: #036;
+    color: white;
+    border-radius: 10px;
+}
