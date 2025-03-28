@@ -1,0 +1,45 @@
+.trainCard {
+    /* Box styling */
+    width: 300px;              /* Fixed width for consistency */
+    border: 1px solid #ccc;    /* Light gray border */
+    border-radius: 8px;        /* Rounded corners */
+    padding: 16px;             /* Inner spacing */
+    margin: 16px;              /* Outer spacing between cards */
+    background-color: #f9f9f9; /* Light gray background */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  
+    /* Ensure text doesn’t overflow */
+    overflow: hidden;
+  }
+  
+  /* Train name styling */
+  .trainCard h3 {
+    font-size: 20px;           /* Larger text */
+    font-weight: bold;         /* Bold for emphasis */
+    margin: 0 0 12px 0;        /* Spacing below the name */
+    color: #333;               /* Dark gray color */
+  }
+  
+  /* Paragraph styling (From, To, Times, Fare) */
+  .trainCard p {
+    font-size: 16px;           /* Readable size */
+    margin: 8px 0;             /* Spacing between lines */
+    color: #555;               /* Slightly lighter gray for contrast */
+  }
+  
+  /* Button styling */
+  .trainCard button {
+    background-color: #007bff; /* Blue background */
+    color: white;              /* White text */
+    border: none;              /* No border */
+    border-radius: 4px;        /* Rounded edges */
+    padding: 8px 16px;         /* Vertical and horizontal padding */
+    font-size: 14px;           /* Readable text */
+    cursor: pointer;           /* Hand icon on hover */
+    transition: background-color 0.3s ease; /* Smooth color change */
+  }
+  
+  /* Button hover effect */
+  .trainCard button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+  }

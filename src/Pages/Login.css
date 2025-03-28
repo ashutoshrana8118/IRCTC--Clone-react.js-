@@ -11,7 +11,7 @@ h2{
     margin: 0 auto;
     margin-bottom: 1rem;
     padding : 10px;
-    background-color: #036;
+    background-color: rgb(33, 102, 171);
     color: white;
     border-radius: 10px;
 
@@ -31,7 +31,7 @@ button{
     align-items: center;
     margin: 15px;
     padding: 10px;
-    background-color: #036;
+    background-color: rgb(33, 102,171);
     color: white;
     border-radius: 10px;
 }

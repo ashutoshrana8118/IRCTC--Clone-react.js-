@@ -1,0 +1,43 @@
+[
+    {
+      "id": 1,
+      "name": "Express 101",
+      "from": "Source",
+      "to": "Destination",
+      "departureTime": "10:00 AM",
+      "arrivalTime": "08:00 PM",
+      "fare": 2000
+    },
+    {
+      "id": 2,
+      "name": "Superfast 202",
+      "from": "Source",
+      "to": "Destination",
+      "departureTime": "2:00 PM",
+      "arrivalTime": "06:00 AM",
+      "fare": 3000
+    },
+
+    {
+        "id": "4",
+        "trainName": "Rajdhani Express",
+        "trainNumber": "12301",
+        "from": "Delhi",
+        "to": "Mumbai",
+        "departure": "16:00",
+        "arrival": "08:00",
+        "duration": "16h",
+        "price": 1500
+    },
+    {
+        "id": "3",
+        "trainName": "Shatabdi Express",
+        "trainNumber": "12002",
+        "from": "Bangalore",
+        "to": "Chennai",
+        "departure": "06:00",
+        "arrival": "11:00",
+        "duration": "5h",
+        "price": 1200
+    }
+]
