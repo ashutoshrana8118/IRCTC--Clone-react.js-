@@ -1,30 +1,75 @@
-import React from "react";
-import "./Register.css";
-function Register(){
-    return(
-        <>
-        <div className="register">
-            <h3>Register</h3>
-            <form>
-                <div className="register-form">
-                    <label> Username </label>
-                    <input type="text" id="username" placeholder="Enter your username" required/>
-                </div>
-                <div className="register-form">
-                    <label>Email</label>
-                    <input type="email"id="email" placeholder="Enter your email" required/>
-                </div>
-                <div className="register-form">
-                    <label>Password</label>
-                    <input type="password" id="password" placeholder="Enter your password" required/>
-                </div>
-                
-                <button id="btn" type="submit">Register</button>
-                
-            </form>    
+import React, { useState } from "react";
+import app from "../config/firebase.js";
+import useForm from "../Hooks/UseForm";
+import Navbar from "../Components/Navbar";
+
+import {
+  getAuth,
+  createUserWithEmailAndPassword,
+  sendEmailVerification,
+} from "firebase/auth";
+import { useNavigate } from "react-router-dom";
+import {
+  showSuccessToast,
+  showErrorToast,
+  showInfoToast,
+} from "../utils/toast";
+import styles from "./Register.module.css";
+const Register = () => {
+  const navigate = useNavigate();
+  const [formData, handleChange] = useForm({});
+  const auth = getAuth();
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    createUserWithEmailAndPassword(auth, formData.email, formData.password)
+      .then((userCredential) => {
+        const user = userCredential.user;
+        return sendEmailVerification(user);
+      })
+      .then((result) => {
+        showSuccessToast("User registerd successfully... Please verify email ");
+        navigate("/login");
+      })
+      .catch((error) => {
+        showErrorToast(`Error registering user ${error.message}`);
+      });
+  };
+  return (
+    <div className={styles.container}>
+      <Navbar />
+      <div className={styles.registerContainer}>
+        <div className={styles.registerBox}>
+          <h2>Register</h2>
+          <form onSubmit={handleSubmit}>
+            <div className="form-group">
+              <label htmlFor="username">Username</label>
+              <input
+                type="text"
+                id="username"
+                onChange={handleChange}
+                required
+              />
+            </div>
+            <div className="form-group">
+              <label htmlFor="email">Email</label>
+              <input type="email" id="email" onChange={handleChange} required />
+            </div>
+            <div className="form-group">
+              <label htmlFor="password">Password</label>
+              <input
+                type="password"
+                id="password"
+                onChange={handleChange}
+                required
+              />
+            </div>
+            <button type="submit">Register</button>
+          </form>
         </div>
-        </>
-    )
-}
+      </div>
+    </div>
+  );
+};
 
 export default Register;
